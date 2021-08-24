@@ -1,0 +1,40 @@
+{
+  "name": "random-steam-game",
+  "version": "1.0.0",
+  "description": "full stack app that generates a link to a random steam game to play",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server/index.js",
+    "react-dev": "webpack --config webpack.dev-config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonesy464/Random-Steam-Game.git"
+  },
+  "author": "Rachel A. Jones",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jonesy464/Random-Steam-Game/issues"
+  },
+  "homepage": "https://github.com/Jonesy464/Random-Steam-Game#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-beta.5",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
+}
