@@ -1,5 +1,7 @@
 const express = require('express');
-const apiModels = require('./api-models.js')
+const apiModels = require('./api-models.js');
+const db = require('../database/db-models.js');
+
 
 const app = express();
 const port = 3090;
@@ -8,6 +10,33 @@ app.use(express.json());
 
 app.use(express.static('client/dist'));
 
+app.get('/favorites', (req, res) => {
+  db.getAllFavorites((err, data) => {
+    if (err) {
+      res.sendStatus(500).send('could not get favorites', err.stack)
+    }
+    res.send(data);
+  })
+})
+
+app.post('/favorites', (req, res) => {
+  db.postFavorite(req.body, (err, data) => {
+    if (err) {
+      res.sendStatus(500).send('could not add to favorites', err.stack)
+    }
+    res.sendStatus(data);
+  })
+})
+
+app.delete('/favorites', (req, res) => {
+  console.log(req.body, 'request');
+  db.removeFavorite(req.body, (err, data) => {
+    if (err) {
+      res.sendStatus(500).send('could not delete favorite', err.stack)
+    }
+    res.sendStatus(data);
+  })
+})
 
 app.get('/randomGames', (req, res) => {
   apiModels.getRandomProducts((err, data) => {
