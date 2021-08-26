@@ -5,16 +5,11 @@ import FavCard from './FavCard.jsx';
 const FavoritesList = ({ favorites, handleRemoveFav }) => (
   <>
     <h3>Favorites List</h3>
-    <Accordion>
+    <div style={{ display: 'flex' }}>
       {favorites.map((favorite, index) => (
-        <Accordion.Item eventKey={`${index}`}>
-          <Accordion.Header>{`${index + 1}. ${favorite.title}`}</Accordion.Header>
-          <Accordion.Body>
-            <FavCard game={favorite} handleRemoveFav={handleRemoveFav} />
-          </Accordion.Body>
-        </Accordion.Item>
+        <FavCard game={favorite} handleRemoveFav={handleRemoveFav} />
       ))}
-    </Accordion>
+    </div>
   </>
 );
 

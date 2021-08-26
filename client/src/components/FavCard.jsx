@@ -3,8 +3,8 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 const FavCard = ({ game, handleRemoveFav }) => (
-  <Card>
-    <Card.Img variant="top" src={game.thumbnail} style={{ width: '40rem', alignSelf: 'center' }} />
+  <Card style={{ width: '18rem' }}>
+    <Card.Img variant="top" src={game.thumbnail} />
     <Card.Body>
       <Card.Title>{game.title}</Card.Title>
       <Card.Text>{game.short_description}</Card.Text>

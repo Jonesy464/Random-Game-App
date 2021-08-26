@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-const GameCard = ({ game, handleFavorite, addedFav, setAddedFav }) => {
+const GameCard = ({
+  game, handleFavorite, addedFav, setAddedFav,
+}) => {
   const addToFav = () => {
     if (!addedFav) {
       handleFavorite();
