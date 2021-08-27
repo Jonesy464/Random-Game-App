@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import RandomCard from './RandomCard.jsx';
 
 const RandomGeneratedList = ({ generated, handleAddFavFromGen }) => (

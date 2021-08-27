@@ -7,6 +7,7 @@ import GameCard from './GameCard.jsx';
 import FavoritesList from './FavoritesList.jsx';
 import RandomGeneratedList from './RandomGeneratedList.jsx';
 import sampleData from '../sampleData';
+import './styles.css';
 
 const App = () => {
   const [game, setGame] = useState({});
@@ -79,25 +80,29 @@ const App = () => {
 
   if (!game.title) {
     return (
-      <div style={{ alignSelf: 'center' }}>
-        <h2>Random Games</h2>
-        <Button variant="primary" onClick={handleGameClick}>Generate A Game!</Button>
+      <div className="app">
+        <h2 className="title">Random Games</h2>
+        <div className="genButton">
+          <Button className="genButton" variant="primary" size="lg" onClick={handleGameClick}>Generate A Game!</Button>
+        </div>
         <FavoritesList favorites={favorites} handleRemoveFav={handleRemoveFav} />
       </div>
     );
   }
   return (
-    <div>
-      <div style={{ alignSelf: 'center' }}>
-      <h2>Random Games</h2>
-      <Button variant="primary" onClick={handleGameClick}>Generate A Game!</Button>
+    <div className="app">
+      <h2 className="title">Random Games</h2>
+      <div className="genButton">
+        <Button variant="primary" size="lg" onClick={handleGameClick}>Generate A Game!</Button>
       </div>
-      <GameCard
-        game={game}
-        handleFavorite={handleAddFavorite}
-        addedFav={addedFav}
-        setAddedFav={setAddedFav}
-      />
+      <div className="genCard">
+        <GameCard
+          game={game}
+          handleFavorite={handleAddFavorite}
+          addedFav={addedFav}
+          setAddedFav={setAddedFav}
+        />
+      </div>
       <Tabs defaultActiveKey="favorites" className="mb-3">
         <Tab eventKey="favorites" title="Favorites">
           <FavoritesList favorites={favorites} handleRemoveFav={handleRemoveFav} />

@@ -1,0 +1,19 @@
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.genButton {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+.genCard {
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  background-image: url('../../dist/mountian.png');
+}
