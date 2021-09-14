@@ -16,7 +16,7 @@ const App = () => {
   const [addedFav, setAddedFav] = useState(false);
 
   const handleGameClick = () => {
-    const randomIndex = Math.floor(Math.random() * 131);
+    const randomIndex = Math.floor(Math.random() * 500);
     setGame(sampleData.data[randomIndex]);
     setGenerated([sampleData.data[randomIndex], ...generated]);
     setAddedFav(false);
