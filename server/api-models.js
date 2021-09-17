@@ -1,10 +1,10 @@
 const axios = require('axios');
 
 module.exports = {
-  getRandomProducts: (cb) => {
+  getRandomProducts: (id, cb) => {
     axios({
       method: 'get',
-      url: 'https://www.freetogame.com/api/games?id=452',
+      url: 'https://www.freetogame.com/api/games?id=${id}',
       transformResponse: [(data) => (
         JSON.stringify(data)
       )],
